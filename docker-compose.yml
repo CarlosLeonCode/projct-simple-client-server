@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  client:
+    image: node:17-alpine
+    volumes:
+      - ./client/:/app:cached
+    working_dir: /app
+    ports:
+      - 3000:3000
+    command: npm start
+    networks:
+      - bridge
+
+  server:
+    image: node:17-alpine
+    volumes:
+      - ./server/:/app:cached
+    working_dir: /app
+    ports:
+      - 3001:3001
+    command: npm start
+    networks:
+      - bridge
