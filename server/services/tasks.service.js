@@ -32,7 +32,7 @@ class TasksService {
   async delete(id){
     const task = await this.findOne(id);
     await task.destroy();
-    return { message: 'delete it!', id: id }
+    return { message: 'delete it!', id: id };
   }
 }
 
