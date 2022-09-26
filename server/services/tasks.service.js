@@ -8,7 +8,9 @@ class TasksService {
   }
 
   async find(){
-    const tasks = await models.Task.findAll();
+    const tasks = await models.Task.findAll({
+      include: ['tags']
+    });
     return tasks;
   }
 

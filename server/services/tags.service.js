@@ -3,7 +3,6 @@ const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
 
 class TagsService {
-
   async create(data){
     const tag = await models.Tag.create(data);
     return tag;
