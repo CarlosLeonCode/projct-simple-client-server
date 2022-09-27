@@ -9,8 +9,8 @@ services:
     ports:
       - 3000:3000
     command: npm start
-    networks:
-      - bridge
+    expose:
+      - 3000
 
   server:
     image: node:17-alpine
@@ -20,5 +20,18 @@ services:
     ports:
       - 3001:3001
     command: npm start
-    networks:
-      - bridge
+    expose:
+      - 3001
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=simple-server
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5432

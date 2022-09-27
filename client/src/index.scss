@@ -1,0 +1,21 @@
+@import '~antd/dist/antd.css';
+
+body {
+  margin: 0;
+  padding: 0;
+
+  .ant-layout{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .ant-layout-sider{
+    padding: 1rem;
+    background: none;
+    box-shadow: 0 0 5px grey;
+  }
+
+  .ant-layout-content{
+    padding: 1rem;
+  }
+}
